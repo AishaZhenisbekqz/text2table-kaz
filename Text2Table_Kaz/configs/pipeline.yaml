@@ -1,0 +1,42 @@
+# Pipeline Hyperparameters
+# Ospan et al. (2024), Sections III-C through III-F
+
+segmentation:
+  model: "spacy"
+  language: "kz"  # Kazakh-specific heuristics
+
+embedding:
+  model: "paraphrase-multilingual-mpnet-base-v2"
+  dim: 768
+  device: "cpu"  # change to "cuda" if available
+  normalize: true  # L2 normalization onto S^767
+
+anchor_detection:
+  use_ner: true
+  ner_model: null  # path to fine-tuned Kazakh NER model
+
+chunking:
+  theta: 0.72         # cosine similarity threshold (grid-searched)
+  # Search space: {0.60, 0.65, 0.70, 0.72, 0.75, 0.80}
+  min_sentences: 3
+  max_sentences: 15
+
+clustering:
+  delta: 0.05         # elbow sensitivity
+  max_k: 10
+  min_k: 2
+  random_state: 42
+
+insight_generation:
+  self_consistency_m: 5
+  temperature: 0.7
+  max_new_tokens: 1500
+
+table_assembly:
+  regime: "dynamic"   # "static" or "dynamic"
+  static_columns:
+    - "Тақырып"
+    - "Оқиға"
+    - "Көрсеткіш"
+    - "Кезең"
+    - "Қосымша мәлімет"

@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  text2table_train:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: text2table_kaz:latest
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - WANDB_PROJECT=text2table_kaz
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    volumes:
+      - ../data:/workspace/Text2Table_Kaz/data
+      - ../checkpoints:/workspace/Text2Table_Kaz/checkpoints
+    command: python scripts/train.py --config configs/dynamic_regime.yaml --seed 42
+
+  text2table_eval:
+    image: text2table_kaz:latest
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    volumes:
+      - ../data:/workspace/Text2Table_Kaz/data
+      - ../checkpoints:/workspace/Text2Table_Kaz/checkpoints
+    command: >
+      python scripts/evaluate.py
+      --adapter_path /workspace/Text2Table_Kaz/checkpoints/dynamic_best
+      --test_data /workspace/Text2Table_Kaz/assets/sample_data.json
+      --regime dynamic --use_llm_judge

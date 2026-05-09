@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  text2table:
+    build: .
+    image: text2table-kaz:latest
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - ./data:/workspace/data
+      - ./results:/workspace/results
+      - ./adapters:/workspace/adapters
+    command: bash
+
+  train-static:
+    build: .
+    image: text2table-kaz:latest
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+    volumes:
+      - ./data:/workspace/data
+      - ./results:/workspace/results
+    command: python scripts/train.py --config configs/static_regime.yaml
+
+  train-dynamic:
+    build: .
+    image: text2table-kaz:latest
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+    volumes:
+      - ./data:/workspace/data
+      - ./results:/workspace/results
+    command: python scripts/train.py --config configs/dynamic_regime.yaml
