@@ -236,22 +236,6 @@ IAA: κ = 0.84 (static), κ = 0.79 (dynamic).
 
 ---
 
-## Citation
-
-```bibtex
-@article{ospan2024text2table,
-  title   = {Dual-Regime Text-to-Table Generation for the Kazakh Language
-             Using Parameter-Efficient Large Language Models},
-  author  = {Ospan, Assel and Mansurova, Madina and Sailau, Aisha and
-             Sarsembayeva, Talshyn and Mosavi, Amir},
-  journal = {IEEE Access},
-  year    = {2024},
-  doi     = {10.1109/ACCESS.2024.0429000}
-}
-```
-
----
-
 ## License
 
 Apache 2.0. Supported by Grant **BR24993001** (MES RK).
