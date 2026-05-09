@@ -158,8 +158,8 @@ docker-compose -f docker/docker-compose.yml up
 from src.pipeline import Text2TablePipeline
 
 pipeline = Text2TablePipeline.from_pretrained(
-    base_model="Qwen/Qwen2.5-3B-Instruct",
-    lora_adapter="your_hf_username/text2table-kaz-dynamic",
+    base_model="Qwen/Qwen3.5-4B",
+    lora_adapter="AishaSailau/qwen3.5-text2table-dynamic",
     regime="dynamic"
 )
 
@@ -199,8 +199,8 @@ python scripts/evaluate.py \
 
 | Adapter | Regime | Val Loss | Link |
 |---------|--------|----------|------|
-| `text2table-kaz-static` | Static | 0.524 | 🤗 *coming soon* |
-| `text2table-kaz-dynamic` | Dynamic | 0.482 | 🤗 *coming soon* |
+| `text2table-kaz-static` | Static | 0.524 | [🤗 Hugging Face](https://huggingface.co/AishaSailau/qwen3.5-text2table-static) |
+| `text2table-kaz-dynamic` | Dynamic | 0.482 | [🤗 Hugging Face](https://huggingface.co/AishaSailau/qwen3.5-text2table-dynamic) |
 
 ---
 
