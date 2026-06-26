@@ -2,7 +2,6 @@
 
 **Dual-Regime Text-to-Table Generation for the Kazakh Language Using Parameter-Efficient Large Language Models**
 
-[![Paper](https://img.shields.io/badge/IEEE%20Access-2024-blue)](https://doi.org/10.1109/ACCESS.2024.0429000)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-yellow)](https://python.org)
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Adapters-orange)](https://huggingface.co)
