@@ -1,0 +1,76 @@
+{
+  "status": "recomputed_from_existing_paired_metric_matrix",
+  "n_pairs": 1000,
+  "bootstrap_iterations": 10000,
+  "base_seed": 42,
+  "confidence_interval": "percentile bootstrap, 95%",
+  "test": "two-sided paired bootstrap on Dynamic-Static differences; differences centered under H0; add-one p-value",
+  "multiple_testing": "Holm correction across five metrics",
+  "results": {
+    "coverage": {
+      "static_mean": 0.0032622,
+      "static_ci_lower": 0.0025667675000000004,
+      "static_ci_upper": 0.003996315,
+      "dynamic_mean": 0.0065781,
+      "dynamic_ci_lower": 0.0049133275,
+      "dynamic_ci_upper": 0.008400957499999999,
+      "difference_dynamic_minus_static": 0.0033159,
+      "difference_ci_lower": 0.00151442,
+      "difference_ci_upper": 0.005230987499999999,
+      "p_value_raw": 0.0004999500049995,
+      "p_value_holm": 0.000999900009999
+    },
+    "accuracy": {
+      "static_mean": 0.0263661,
+      "static_ci_lower": 0.02327336,
+      "static_ci_upper": 0.029687225,
+      "dynamic_mean": 0.0572536,
+      "dynamic_ci_lower": 0.0493534275,
+      "dynamic_ci_upper": 0.065538245,
+      "difference_dynamic_minus_static": 0.0308875,
+      "difference_ci_lower": 0.02277878,
+      "difference_ci_upper": 0.039336132499999996,
+      "p_value_raw": 9.999000099990002e-05,
+      "p_value_holm": 0.0004999500049995
+    },
+    "compression": {
+      "static_mean": 1.0,
+      "static_ci_lower": 1.0,
+      "static_ci_upper": 1.0,
+      "dynamic_mean": 1.0,
+      "dynamic_ci_lower": 1.0,
+      "dynamic_ci_upper": 1.0,
+      "difference_dynamic_minus_static": 0.0,
+      "difference_ci_lower": 0.0,
+      "difference_ci_upper": 0.0,
+      "p_value_raw": 1.0,
+      "p_value_holm": 1.0
+    },
+    "structure": {
+      "static_mean": 0.9652445000000001,
+      "static_ci_lower": 0.959858565,
+      "static_ci_upper": 0.9703036549999999,
+      "dynamic_mean": 0.977615,
+      "dynamic_ci_lower": 0.9730610125,
+      "dynamic_ci_upper": 0.9818494349999999,
+      "difference_dynamic_minus_static": 0.0123705,
+      "difference_ci_lower": 0.005971239999999999,
+      "difference_ci_upper": 0.018922372499999996,
+      "p_value_raw": 0.00029997000299970003,
+      "p_value_holm": 0.0008999100089991002
+    },
+    "journalistic_value": {
+      "static_mean": 0.8462544000000001,
+      "static_ci_lower": 0.843288785,
+      "static_ci_upper": 0.8491520125,
+      "dynamic_mean": 0.8958196,
+      "dynamic_ci_lower": 0.8938748725,
+      "dynamic_ci_upper": 0.8977177025,
+      "difference_dynamic_minus_static": 0.049565200000000004,
+      "difference_ci_lower": 0.04856724,
+      "difference_ci_upper": 0.050585155,
+      "p_value_raw": 9.999000099990002e-05,
+      "p_value_holm": 0.0004999500049995
+    }
+  }
+}

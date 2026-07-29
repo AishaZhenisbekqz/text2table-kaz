@@ -131,9 +131,16 @@ class InsightGenerator:
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": COT_USER_TEMPLATE.format(text=text)},
         ]
-        input_ids = self._tokenizer.apply_chat_template(
-            messages, return_tensors="pt", add_generation_prompt=True
-        ).to(self._model.device)
+        chat_result = self._tokenizer.apply_chat_template(
+            messages,
+            return_tensors="pt",
+            add_generation_prompt=True,
+            enable_thinking=False,
+        )
+        if isinstance(chat_result, dict) or hasattr(chat_result, "input_ids"):
+            input_ids = chat_result["input_ids"].to(self._model.device)
+        else:
+            input_ids = chat_result.to(self._model.device)
 
         with torch.no_grad():
             output = self._model.generate(

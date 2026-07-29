@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-07-29T08:45:43.298533+00:00",
+  "status": "complete",
+  "benchmark": "/home/user/Desktop/text2teble/cmes_86051_run_20260728T092903Z/CMES_evaluation/benchmark_gold_1000.jsonl",
+  "benchmark_sha256": "95eb0fd2fe1a62fea911379e79a357722e41ca73b1b7e2431beda219096061b4",
+  "expected_records": 1000,
+  "output_records": 1000,
+  "ok_records": 1000,
+  "error_records": 0,
+  "regime": "static",
+  "model_path": "AishaSailau/qwen3.5-text2table-static",
+  "adapter_path": null,
+  "generation_mode": "pipeline",
+  "repo_dir": "/home/user/Desktop/text2teble/cmes_86051_run_20260728T092903Z/text2table-kaz/Text2Table_Kaz",
+  "seed": 42,
+  "temperature": 0.7,
+  "do_sample": true,
+  "self_consistency_m": 5,
+  "max_new_tokens": 1500,
+  "output": "/home/user/Desktop/text2teble/manual_setup/results_1000/static_predictions_1000.jsonl",
+  "output_sha256": "5d38c5b5ce51b588bc9a7338433220d761b758975bbc531f086dbcdf6904c5cc",
+  "regime_propagation_fix_applied": true,
+  "environment": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+    "cuda_visible_devices": "0"
+  },
+  "theta": 0.3,
+  "theta_note": "Recalibrated from manuscript theta=0.72 due to embedding-model version drift; see theta_decision.json and theta_recalibration_report_fine.json for full grid search and co-author decision."
+}
