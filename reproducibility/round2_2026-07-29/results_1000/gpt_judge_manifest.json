@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-07-29T12:04:13.607648+00:00",
+  "evaluation_model": "gpt-4o",
+  "evaluator_provider": "openai",
+  "temperature": 0.2,
+  "runs_per_output": 3,
+  "order_seed": 42,
+  "judge_script_version": "gpt4o_judge_v1_2026-07-29",
+  "regimes_judged_so_far": [
+    "dynamic",
+    "static"
+  ],
+  "total_raw_calls_accumulated": 6000,
+  "total_errors_after_retries": 0,
+  "raw_log_sha256": "56d6ce37bcb67ed5b84aeac333bc7d1a7500b9bb4faade0968dc0ec9e8af6473",
+  "methodology_deviation": "Metadata correction only. Original timestamps, scores, and prompt hashes were preserved.",
+  "note_if_partial": "Evaluation completed. Metadata fields normalized after verification."
+}
